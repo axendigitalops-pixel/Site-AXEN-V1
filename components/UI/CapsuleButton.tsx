@@ -27,12 +27,12 @@ const CapsuleButton: React.FC<CapsuleButtonProps> = ({
     // Changed primary to Ivory bg with Black text. Turquoise appears on hover shadow/border context if needed, 
     // but here we keep it monochrome for elegance, maybe a turquoise text on hover? 
     // Let's make it Ivory background, and on hover slightly brighter or a subtle turquoise tint.
-    primary: "bg-axing-ivory text-axing-black hover:bg-white hover:shadow-[0_0_20px_rgba(62,230,219,0.3)]",
+    primary: "bg-axen-ivory text-axen-black hover:bg-white hover:shadow-[0_0_20px_rgba(62,230,219,0.3)]",
     
     // Outline is now White border by default, turns Turquoise on hover.
-    outline: "border border-white/20 text-axing-ivory hover:border-axing-turquoise hover:text-axing-turquoise",
+    outline: "border border-white/20 text-axen-ivory hover:border-axen-turquoise hover:text-axen-turquoise",
     
-    ghost: "bg-axing-darkgray text-axing-ivory border border-axing-gray/30 hover:border-axing-turquoise hover:text-axing-turquoise"
+    ghost: "bg-axen-darkgray text-axen-ivory border border-axen-gray/30 hover:border-axen-turquoise hover:text-axen-turquoise"
   };
 
   return (

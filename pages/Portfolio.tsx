@@ -22,8 +22,8 @@ const Portfolio: React.FC = () => {
   return (
     <div className="pt-32 pb-20">
       <section className="container mx-auto px-6 text-center mb-16">
-        <h1 className="text-5xl md:text-6xl font-display font-bold text-axing-ivory mb-6">Cases de Sucesso</h1>
-        <p className="text-axing-gray max-w-2xl mx-auto mb-10">
+        <h1 className="text-5xl md:text-6xl font-display font-bold text-axen-ivory mb-6">Cases de Sucesso</h1>
+        <p className="text-axen-gray max-w-2xl mx-auto mb-10">
           Resultados reais gerados pela integração do nosso ecossistema.
         </p>
 
@@ -35,8 +35,8 @@ const Portfolio: React.FC = () => {
               onClick={() => setFilter(cat)}
               className={`px-6 py-2 rounded-full border transition-all duration-300 ${
                 filter === cat 
-                  ? 'bg-axing-ivory text-axing-black border-axing-ivory font-bold' 
-                  : 'bg-transparent text-axing-gray border-white/10 hover:border-axing-ivory/50 hover:text-axing-ivory'
+                  ? 'bg-axen-ivory text-axen-black border-axen-ivory font-bold' 
+                  : 'bg-transparent text-axen-gray border-white/10 hover:border-axen-ivory/50 hover:text-axen-ivory'
               }`}
             >
               {cat}
@@ -67,9 +67,9 @@ const Portfolio: React.FC = () => {
                    </div>
                 </div>
                 <div>
-                   <span className="text-axing-gray text-xs font-bold uppercase tracking-wider group-hover:text-axing-turquoise transition-colors">{project.client}</span>
-                   <h3 className="text-2xl font-display text-axing-ivory group-hover:text-white transition-colors">{project.title}</h3>
-                   <p className="text-axing-gray text-sm mt-2">{project.desc}</p>
+                   <span className="text-axen-gray text-xs font-bold uppercase tracking-wider group-hover:text-axen-turquoise transition-colors">{project.client}</span>
+                   <h3 className="text-2xl font-display text-axen-ivory group-hover:text-white transition-colors">{project.title}</h3>
+                   <p className="text-axen-gray text-sm mt-2">{project.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -78,7 +78,7 @@ const Portfolio: React.FC = () => {
       </section>
 
       <section className="container mx-auto px-6 mt-24 text-center">
-        <h2 className="text-2xl font-display text-axing-ivory mb-6">Crie seu próprio case de sucesso.</h2>
+        <h2 className="text-2xl font-display text-axen-ivory mb-6">Crie seu próprio case de sucesso.</h2>
         <CapsuleButton>Iniciar Projeto</CapsuleButton>
       </section>
     </div>

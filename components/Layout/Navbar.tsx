@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Triangle } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CapsuleButton from '../UI/CapsuleButton';
 
@@ -37,9 +37,9 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Desktop Navigation - Floating Capsule Style */}
+      {/* Unified Navigation - Floating Capsule Style */}
       <motion.div 
-        className="fixed top-0 left-0 w-full z-50 hidden md:flex justify-center pointer-events-none"
+        className="fixed top-0 left-0 w-full z-50 flex justify-center pointer-events-none"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
@@ -48,48 +48,45 @@ const Navbar: React.FC = () => {
           className="pointer-events-auto flex items-center justify-between"
           initial={false}
           animate={{
-            width: scrolled ? "auto" : "90%", // Starts wide (90%), shrinks to fit content (auto)
-            maxWidth: scrolled ? "900px" : "1400px", // Limits width in both states
-            marginTop: scrolled ? "1.5rem" : "2rem",
-            padding: scrolled ? "0.75rem 1rem" : "1.25rem 2.5rem", // Smooth padding reduction
-            backgroundColor: scrolled ? "rgba(5, 5, 5, 0.85)" : "rgba(5, 5, 5, 0)", // Transparent at absolute top for cleaner look
-            backdropFilter: scrolled ? "blur(16px)" : "blur(0px)", // No blur at top to show bg clearly
-            borderRadius: "9999px", // Always rounded capsule
-            border: scrolled ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid rgba(255, 255, 255, 0)", // No border at top
+            width: scrolled ? "90%" : "95%", // Slightly wider on initial state for mobile
+            maxWidth: scrolled ? "900px" : "1400px",
+            marginTop: scrolled ? "1rem" : "1.5rem", // Reduced top margin for mobile friendliness
+            padding: scrolled ? "0.75rem 1rem" : "1rem 1.5rem", // Responsive padding values
+            backgroundColor: scrolled ? "rgba(5, 5, 5, 0.85)" : "rgba(5, 5, 5, 0)",
+            backdropFilter: scrolled ? "blur(16px)" : "blur(0px)",
+            borderRadius: "9999px",
+            border: scrolled ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid rgba(255, 255, 255, 0)",
             boxShadow: scrolled ? "0 10px 40px -10px rgba(0,0,0,0.5)" : "none",
-            gap: scrolled ? "0rem" : "2rem", // Adjust internal spacing if needed
           }}
-          // Ultra smooth bezier curve for luxurious feel
           transition={{ 
             duration: 0.8,
             ease: [0.16, 1, 0.3, 1] 
           }}
         >
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group mr-4 md:mr-8 shrink-0 pl-2">
-            <div className="relative w-6 h-6">
-              <Triangle className="w-6 h-6 text-axing-ivory fill-current transform rotate-180 group-hover:text-axing-turquoise transition-colors duration-300" />
-            </div>
-            <span className="text-xl font-display font-bold text-axing-ivory tracking-tighter group-hover:text-white transition-colors">
-              AXING
-            </span>
+          <Link to="/" className="flex items-center gap-2 group shrink-0 pl-1 md:pl-2 md:mr-8 relative z-50">
+            <img 
+              src="https://i.im.ge/2026/02/12/ePclFX.LOGOS-AXEN-V1-2.png" 
+              alt="Axen Logo" 
+              className="h-10 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
-          {/* Links */}
-          <div className="flex items-center gap-4 lg:gap-8 mx-2 lg:mx-4">
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center gap-4 lg:gap-8 mx-4">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 className={`text-xs uppercase tracking-widest font-bold transition-all duration-300 relative group py-2 ${
-                  location.pathname === item.path ? 'text-white' : 'text-axing-gray hover:text-white'
+                  location.pathname === item.path ? 'text-white' : 'text-axen-gray hover:text-white'
                 }`}
               >
                 {item.label}
                 {location.pathname === item.path && (
                   <motion.div 
                     layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 w-full h-[2px] bg-axing-turquoise rounded-full"
+                    className="absolute -bottom-1 left-0 w-full h-[2px] bg-axen-turquoise rounded-full"
                     transition={{ duration: 0.4 }}
                   />
                 )}
@@ -97,65 +94,73 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="ml-4 md:ml-8 shrink-0 pr-1">
-            <Link to="/contact">
-              <CapsuleButton 
-                variant="outline" 
-                size={scrolled ? "small" : "normal"} // Dynamically change size
-                className="!border-white/20 !text-white hover:!border-white hover:!bg-white hover:!text-black transition-all duration-700"
-              >
-                Acesso
-              </CapsuleButton>
-            </Link>
+          {/* Right Side Actions */}
+          <div className="flex items-center gap-3 md:ml-8 shrink-0 relative z-50">
+            {/* Desktop CTA */}
+            <div className="hidden md:block">
+               <Link to="/contact">
+                  <CapsuleButton 
+                    variant="outline" 
+                    size={scrolled ? "small" : "normal"}
+                    className="!border-white/20 !text-white hover:!border-white hover:!bg-white hover:!text-black transition-all duration-700"
+                  >
+                    Acesso
+                  </CapsuleButton>
+               </Link>
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="md:hidden text-axen-ivory p-2 rounded-full hover:bg-white/10 transition-colors"
+              aria-label="Menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </motion.nav>
       </motion.div>
-
-      {/* Mobile Navigation - Classic Bar */}
-      <div className="md:hidden fixed top-0 left-0 w-full z-50 bg-axing-black/90 backdrop-blur-md border-b border-white/5 py-4 px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2">
-           <Triangle className="w-6 h-6 text-axing-ivory fill-current transform rotate-180" />
-           <span className="text-xl font-display font-bold text-axing-ivory tracking-tighter">AXING</span>
-        </Link>
-        <button onClick={() => setIsOpen(!isOpen)} className="text-axing-ivory p-2">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: '100vh' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="fixed top-[60px] left-0 w-full bg-axing-black z-40 overflow-hidden md:hidden"
+            initial={{ opacity: 0, clipPath: "circle(0% at 90% 40px)" }}
+            animate={{ opacity: 1, clipPath: "circle(150% at 90% 40px)" }}
+            exit={{ opacity: 0, clipPath: "circle(0% at 90% 40px)" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="fixed top-0 left-0 w-full h-screen bg-axen-black z-40 flex flex-col items-center justify-center md:hidden"
+            style={{ paddingTop: '80px' }} // Spacing for the header
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8 pb-20">
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-axen-turquoise/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+            <div className="flex flex-col items-center gap-8 w-full px-6">
               {navItems.map((item, i) => (
                 <motion.div
                   key={item.path}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ delay: 0.1 + i * 0.1 }}
                 >
                   <Link
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className="text-2xl font-display font-bold text-axing-ivory hover:text-axing-turquoise transition-colors"
+                    className="text-3xl font-display font-bold text-axen-ivory hover:text-axen-turquoise transition-colors"
                   >
                     {item.label}
                   </Link>
                 </motion.div>
               ))}
+              
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
+                className="mt-8"
               >
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
-                  <CapsuleButton>Ativar Núcleo</CapsuleButton>
+                  <CapsuleButton className="!text-lg !px-10 !py-4">Acesso</CapsuleButton>
                 </Link>
               </motion.div>
             </div>

@@ -21,7 +21,7 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-axing-black text-axing-ivory font-body selection:bg-axing-turquoise selection:text-black">
+      <div className="min-h-screen bg-axen-black text-axen-ivory font-body selection:bg-axen-turquoise selection:text-black">
         <Navbar />
         <main className="flex-grow">
           <Routes>

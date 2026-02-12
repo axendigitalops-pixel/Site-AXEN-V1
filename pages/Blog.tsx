@@ -32,8 +32,8 @@ const Blog: React.FC = () => {
   return (
     <div className="pt-32 pb-20">
       <section className="container mx-auto px-6 mb-16">
-        <h1 className="text-5xl font-display font-bold text-axing-ivory mb-6">Conteúdo de Autoridade</h1>
-        <p className="text-axing-gray max-w-xl">Insights profundos sobre tecnologia, cultura e inovação.</p>
+        <h1 className="text-5xl font-display font-bold text-axen-ivory mb-6">Conteúdo de Autoridade</h1>
+        <p className="text-axen-gray max-w-xl">Insights profundos sobre tecnologia, cultura e inovação.</p>
       </section>
 
       <section className="container mx-auto px-6">
@@ -44,21 +44,21 @@ const Blog: React.FC = () => {
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                transition={{ delay: index * 0.1 }}
-               className={`group rounded-[2rem] bg-axing-darkgray/30 border border-white/5 overflow-hidden hover:border-axing-turquoise/30 transition-all ${index === 0 ? 'md:col-span-2' : ''}`}
+               className={`group rounded-[2rem] bg-axen-darkgray/30 border border-white/5 overflow-hidden hover:border-axen-turquoise/30 transition-all ${index === 0 ? 'md:col-span-2' : ''}`}
              >
                <div className={`relative overflow-hidden ${index === 0 ? 'aspect-[21/9]' : 'aspect-video'}`}>
                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                 <div className="absolute top-6 left-6 bg-axing-black/80 backdrop-blur-sm px-4 py-1 rounded-full border border-white/10">
-                    <span className="text-xs font-bold text-axing-turquoise uppercase">{post.category}</span>
+                 <div className="absolute top-6 left-6 bg-axen-black/80 backdrop-blur-sm px-4 py-1 rounded-full border border-white/10">
+                    <span className="text-xs font-bold text-axen-turquoise uppercase">{post.category}</span>
                  </div>
                </div>
                <div className="p-8">
-                 <span className="text-axing-gray text-xs mb-2 block">{post.date}</span>
-                 <h2 className={`${index === 0 ? 'text-3xl' : 'text-xl'} font-display font-bold text-axing-ivory mb-4 group-hover:text-axing-turquoise transition-colors`}>
+                 <span className="text-axen-gray text-xs mb-2 block">{post.date}</span>
+                 <h2 className={`${index === 0 ? 'text-3xl' : 'text-xl'} font-display font-bold text-axen-ivory mb-4 group-hover:text-axen-turquoise transition-colors`}>
                    {post.title}
                  </h2>
-                 <p className="text-axing-gray text-sm line-clamp-2 mb-6">{post.excerpt}</p>
-                 <span className="text-axing-ivory text-sm font-bold underline decoration-axing-turquoise underline-offset-4">Ler artigo completo</span>
+                 <p className="text-axen-gray text-sm line-clamp-2 mb-6">{post.excerpt}</p>
+                 <span className="text-axen-ivory text-sm font-bold underline decoration-axen-turquoise underline-offset-4">Ler artigo completo</span>
                </div>
              </motion.article>
            ))}
@@ -67,7 +67,7 @@ const Blog: React.FC = () => {
 
       {/* Newsletter */}
       <section className="container mx-auto px-6 mt-24">
-        <div className="bg-axing-turquoise text-axing-black rounded-[3rem] p-10 text-center">
+        <div className="bg-axen-turquoise text-axen-black rounded-[3rem] p-10 text-center">
             <h3 className="text-2xl font-display font-bold mb-4">Mantenha-se no núcleo.</h3>
             <p className="mb-6 opacity-80">Receba nossa curadoria mensal de tendências.</p>
             <form className="max-w-md mx-auto flex gap-2">

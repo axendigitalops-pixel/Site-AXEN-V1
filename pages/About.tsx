@@ -32,26 +32,26 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="bg-axing-black min-h-screen overflow-hidden">
+    <div className="bg-axen-black min-h-screen overflow-hidden">
        {/* Hero Section: The Manifesto */}
        <section className="relative pt-40 pb-24 container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
             <div className="lg:w-2/3">
                 <RevealSection>
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="w-2 h-2 bg-axing-turquoise rounded-full animate-pulse"></span>
-                        <span className="text-axing-turquoise text-xs font-bold uppercase tracking-[0.2em]">System.Init(2026)</span>
+                        <span className="w-2 h-2 bg-axen-turquoise rounded-full animate-pulse"></span>
+                        <span className="text-axen-turquoise text-xs font-bold uppercase tracking-[0.2em]">System.Init(2026)</span>
                     </div>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-axing-ivory leading-[0.9] tracking-tight mb-8">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-axen-ivory leading-[0.9] tracking-tight mb-8">
                         NÓS SOMOS <br/>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-axing-gray via-axing-ivory to-axing-gray">O GHOST NA</span> <br/>
-                        <span className="text-axing-turquoise">MACHINE.</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-axen-gray via-axen-ivory to-axen-gray">O GHOST NA</span> <br/>
+                        <span className="text-axen-turquoise">MACHINE.</span>
                     </h1>
                 </RevealSection>
                 
                 <RevealSection delay={0.2}>
-                    <p className="text-xl md:text-2xl text-axing-gray font-light leading-relaxed max-w-2xl border-l border-white/10 pl-8">
-                        A Axing não é apenas uma agência. Somos uma infraestrutura de inteligência. Nascemos para preencher o abismo entre a frieza dos dados e o calor da intuição humana.
+                    <p className="text-xl md:text-2xl text-axen-gray font-light leading-relaxed max-w-2xl border-l border-white/10 pl-8">
+                        A Axen não é apenas uma agência. Somos uma infraestrutura de inteligência. Nascemos para preencher o abismo entre a frieza dos dados e o calor da intuição humana.
                     </p>
                 </RevealSection>
             </div>
@@ -73,8 +73,8 @@ const About: React.FC = () => {
                     <div className="w-48 h-48 border border-white/10 rounded-full"></div>
                 </motion.div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 bg-axing-turquoise/10 rounded-full blur-xl animate-pulse"></div>
-                    <Terminal size={48} className="text-axing-ivory relative z-10" />
+                    <div className="w-24 h-24 bg-axen-turquoise/10 rounded-full blur-xl animate-pulse"></div>
+                    <Terminal size={48} className="text-axen-ivory relative z-10" />
                 </div>
             </div>
         </div>
@@ -84,18 +84,18 @@ const About: React.FC = () => {
       <section className="container mx-auto px-6 py-24">
         <RevealSection>
             <div className="bg-[#080808] rounded-[3rem] border border-white/10 p-2 overflow-hidden relative">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-axing-turquoise/50 to-transparent"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-axen-turquoise/50 to-transparent"></div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
                     {/* Mission */}
                     <div className="p-10 md:p-16 relative group">
-                        <div className="absolute top-6 right-6 text-white/5 group-hover:text-axing-turquoise/10 transition-colors">
+                        <div className="absolute top-6 right-6 text-white/5 group-hover:text-axen-turquoise/10 transition-colors">
                             <Cpu size={120} strokeWidth={0.5} />
                         </div>
                         <div className="relative z-10">
-                            <span className="text-xs font-mono text-axing-gray mb-2 block">// CORE.PURPOSE</span>
-                            <h3 className="text-3xl font-display font-bold text-axing-ivory mb-6">Missão</h3>
-                            <p className="text-lg text-axing-gray/80 leading-relaxed">
+                            <span className="text-xs font-mono text-axen-gray mb-2 block">// CORE.PURPOSE</span>
+                            <h3 className="text-3xl font-display font-bold text-axen-ivory mb-6">Missão</h3>
+                            <p className="text-lg text-axen-gray/80 leading-relaxed">
                                 Ser o núcleo processador que integra pessoas, inteligência artificial e criatividade para impulsionar transformações digitais autênticas e gerar crescimento sustentável em escala global.
                             </p>
                         </div>
@@ -103,13 +103,13 @@ const About: React.FC = () => {
 
                     {/* Vision */}
                     <div className="p-10 md:p-16 relative group">
-                        <div className="absolute top-6 right-6 text-white/5 group-hover:text-axing-turquoise/10 transition-colors">
+                        <div className="absolute top-6 right-6 text-white/5 group-hover:text-axen-turquoise/10 transition-colors">
                             <Globe size={120} strokeWidth={0.5} />
                         </div>
                         <div className="relative z-10">
-                            <span className="text-xs font-mono text-axing-gray mb-2 block">// TARGET.STATE_2030</span>
-                            <h3 className="text-3xl font-display font-bold text-axing-ivory mb-6">Visão</h3>
-                            <p className="text-lg text-axing-gray/80 leading-relaxed">
+                            <span className="text-xs font-mono text-axen-gray mb-2 block">// TARGET.STATE_2030</span>
+                            <h3 className="text-3xl font-display font-bold text-axen-ivory mb-6">Visão</h3>
+                            <p className="text-lg text-axen-gray/80 leading-relaxed">
                                 Tornar-se a referência definitiva em inovação humanizada, reconhecida como a central de soluções (Hub) que reconfigura indústrias inteiras através de tecnologia ética e criativa.
                             </p>
                         </div>
@@ -120,12 +120,12 @@ const About: React.FC = () => {
       </section>
 
       {/* DNA Modules (Values) */}
-      <section className="py-24 bg-axing-darkgray/20 border-y border-white/5">
+      <section className="py-24 bg-axen-darkgray/20 border-y border-white/5">
         <div className="container mx-auto px-6">
             <RevealSection className="mb-16 flex items-end justify-between">
                 <div>
-                    <h2 className="text-4xl font-display font-bold text-axing-ivory mb-2">Código Fonte</h2>
-                    <p className="text-axing-gray">Os valores inegociáveis que rodam nosso sistema.</p>
+                    <h2 className="text-4xl font-display font-bold text-axen-ivory mb-2">Código Fonte</h2>
+                    <p className="text-axen-gray">Os valores inegociáveis que rodam nosso sistema.</p>
                 </div>
                 <div className="hidden md:block w-32 h-[1px] bg-white/20"></div>
             </RevealSection>
@@ -133,22 +133,22 @@ const About: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {values.map((val, idx) => (
                     <RevealSection key={idx} delay={idx * 0.1}>
-                        <div className="group relative h-full bg-black hover:bg-[#0A0A0A] border border-white/10 hover:border-axing-turquoise/40 rounded-2xl p-8 transition-all duration-500 overflow-hidden">
+                        <div className="group relative h-full bg-black hover:bg-[#0A0A0A] border border-white/10 hover:border-axen-turquoise/40 rounded-2xl p-8 transition-all duration-500 overflow-hidden">
                             {/* Number Background */}
-                            <span className="absolute -bottom-4 -right-4 text-8xl font-display font-bold text-white/[0.02] group-hover:text-axing-turquoise/[0.05] transition-colors select-none">
+                            <span className="absolute -bottom-4 -right-4 text-8xl font-display font-bold text-white/[0.02] group-hover:text-axen-turquoise/[0.05] transition-colors select-none">
                                 {val.id}
                             </span>
                             
                             <div className="relative z-10">
                                 <div className="flex justify-between items-start mb-6">
-                                    <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-axing-ivory group-hover:bg-axing-turquoise group-hover:text-black transition-all duration-300">
+                                    <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-axen-ivory group-hover:bg-axen-turquoise group-hover:text-black transition-all duration-300">
                                         <val.icon size={24} />
                                     </div>
-                                    <span className="font-mono text-xs text-axing-gray/50 group-hover:text-axing-turquoise transition-colors">VAL_MOD_{val.id}</span>
+                                    <span className="font-mono text-xs text-axen-gray/50 group-hover:text-axen-turquoise transition-colors">VAL_MOD_{val.id}</span>
                                 </div>
                                 
-                                <h3 className="text-xl font-display font-bold text-axing-ivory mb-3 group-hover:translate-x-1 transition-transform">{val.title}</h3>
-                                <p className="text-sm text-axing-gray leading-relaxed border-l border-white/10 pl-4 group-hover:border-axing-turquoise/30 transition-colors">
+                                <h3 className="text-xl font-display font-bold text-axen-ivory mb-3 group-hover:translate-x-1 transition-transform">{val.title}</h3>
+                                <p className="text-sm text-axen-gray leading-relaxed border-l border-white/10 pl-4 group-hover:border-axen-turquoise/30 transition-colors">
                                     {val.desc}
                                 </p>
                             </div>
@@ -164,8 +164,8 @@ const About: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-16">
             <div className="lg:w-1/3 sticky top-32 h-fit">
                 <RevealSection>
-                    <h2 className="text-5xl font-display font-bold text-axing-ivory mb-6">System Log</h2>
-                    <p className="text-axing-gray text-lg mb-8">
+                    <h2 className="text-5xl font-display font-bold text-axen-ivory mb-6">System Log</h2>
+                    <p className="text-axen-gray text-lg mb-8">
                         A evolução do nosso núcleo, de um coletivo experimental para uma infraestrutura global.
                     </p>
                     <CapsuleButton variant="outline">Ver Roadmap Futuro</CapsuleButton>
@@ -174,25 +174,25 @@ const About: React.FC = () => {
 
             <div className="lg:w-2/3 relative">
                 {/* Vertical Line */}
-                <div className="absolute left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-axing-turquoise via-white/10 to-transparent"></div>
+                <div className="absolute left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-axen-turquoise via-white/10 to-transparent"></div>
 
                 <div className="space-y-16">
                     {[
                         { year: '2018', label: 'Kernel Loaded', text: 'Início da jornada dos fundadores em transformação digital e consultoria high-end.' },
                         { year: '2022', label: 'Hybrid Integration', text: 'Primeiros projetos experimentais unindo IA generativa (GPT-2 era) com design craft.' },
-                        { year: '2026', label: 'Axing Bootup', text: 'Fundação oficial da Axing como subsidiária autônoma da Axen Digital Ops.' },
+                        { year: '2026', label: 'Axen Bootup', text: 'Fundação oficial da Axen como subsidiária autônoma da Axen Digital Ops.' },
                         { year: 'Hoje', label: 'System Online', text: 'Operação em 3 continentes, processando crescimento para mais de 50 empresas.' }
                     ].map((item, i) => (
                         <RevealSection key={i} delay={i * 0.1}>
                             <div className="relative pl-16 group">
                                 {/* Dot */}
-                                <div className="absolute left-[11px] top-2 w-2.5 h-2.5 rounded-full bg-black border-2 border-axing-turquoise group-hover:scale-150 group-hover:bg-axing-turquoise transition-all duration-300 z-10"></div>
+                                <div className="absolute left-[11px] top-2 w-2.5 h-2.5 rounded-full bg-black border-2 border-axen-turquoise group-hover:scale-150 group-hover:bg-axen-turquoise transition-all duration-300 z-10"></div>
                                 {/* Glow effect */}
-                                <div className="absolute left-[7px] top-1 w-4 h-4 bg-axing-turquoise/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                <div className="absolute left-[7px] top-1 w-4 h-4 bg-axen-turquoise/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 
-                                <span className="font-mono text-axing-turquoise text-sm mb-1 block opacity-80">{item.year} // {item.label}</span>
-                                <h3 className="text-2xl font-display font-bold text-axing-ivory mb-3">{item.text.split(' ').slice(0, 3).join(' ')}...</h3>
-                                <p className="text-axing-gray text-lg bg-[#0A0A0A] p-6 rounded-r-2xl border-l-2 border-white/10 group-hover:border-axing-turquoise transition-colors">
+                                <span className="font-mono text-axen-turquoise text-sm mb-1 block opacity-80">{item.year} // {item.label}</span>
+                                <h3 className="text-2xl font-display font-bold text-axen-ivory mb-3">{item.text.split(' ').slice(0, 3).join(' ')}...</h3>
+                                <p className="text-axen-gray text-lg bg-[#0A0A0A] p-6 rounded-r-2xl border-l-2 border-white/10 group-hover:border-axen-turquoise transition-colors">
                                     {item.text}
                                 </p>
                             </div>
@@ -207,8 +207,8 @@ const About: React.FC = () => {
       <section className="bg-gradient-to-b from-[#050505] to-[#0A0A0A] py-24 border-t border-white/5">
         <div className="container mx-auto px-6">
             <RevealSection className="text-center mb-16">
-                <h2 className="text-4xl font-display font-bold text-axing-ivory mb-4">Os Arquitetos</h2>
-                <p className="text-axing-gray">Mentes humanas por trás do código.</p>
+                <h2 className="text-4xl font-display font-bold text-axen-ivory mb-4">Os Arquitetos</h2>
+                <p className="text-axen-gray">Mentes humanas por trás do código.</p>
             </RevealSection>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -224,8 +224,8 @@ const About: React.FC = () => {
                             
                             <div className="absolute bottom-0 left-0 w-full p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                 <div className="bg-white/10 backdrop-blur-md border border-white/10 p-4 rounded-xl">
-                                    <h3 className="text-xl font-display font-bold text-axing-ivory">{member.name}</h3>
-                                    <p className="text-axing-turquoise text-sm font-bold uppercase tracking-wider">{member.role}</p>
+                                    <h3 className="text-xl font-display font-bold text-axen-ivory">{member.name}</h3>
+                                    <p className="text-axen-turquoise text-sm font-bold uppercase tracking-wider">{member.role}</p>
                                 </div>
                             </div>
                         </div>
@@ -237,7 +237,7 @@ const About: React.FC = () => {
 
       {/* Final Recruitment CTA */}
       <section className="container mx-auto px-6 pb-24">
-        <div className="relative rounded-[3rem] overflow-hidden bg-axing-ivory text-axing-black p-12 md:p-20 text-center">
+        <div className="relative rounded-[3rem] overflow-hidden bg-axen-ivory text-axen-black p-12 md:p-20 text-center">
             {/* Decorative BG */}
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
             
@@ -248,7 +248,7 @@ const About: React.FC = () => {
                 </p>
                 <div className="flex justify-center gap-4">
                     <Link to="/careers">
-                        <button className="px-10 py-4 rounded-full bg-black text-white hover:bg-axing-turquoise hover:text-black transition-all duration-300 font-bold text-lg flex items-center gap-2 group">
+                        <button className="px-10 py-4 rounded-full bg-black text-white hover:bg-axen-turquoise hover:text-black transition-all duration-300 font-bold text-lg flex items-center gap-2 group">
                             Ver Posições Abertas
                             <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </button>

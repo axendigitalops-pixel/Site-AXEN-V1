@@ -21,46 +21,46 @@ const Contact: React.FC = () => {
         
         {/* Contact Info */}
         <div>
-          <h1 className="text-5xl font-display font-bold text-axing-ivory mb-8">Vamos ativar seu núcleo?</h1>
-          <p className="text-xl text-axing-gray mb-12">
+          <h1 className="text-5xl font-display font-bold text-axen-ivory mb-8">Vamos ativar seu núcleo?</h1>
+          <p className="text-xl text-axen-gray mb-12">
             Conte-nos sobre seus desafios. Nossa equipe de especialistas está pronta para desenhar a estratégia ideal.
           </p>
 
           <div className="space-y-8">
-            <div className="flex items-start gap-6 p-6 rounded-2xl bg-axing-darkgray/30 border border-white/5">
-                <div className="p-3 bg-axing-turquoise/10 rounded-full text-axing-turquoise">
+            <div className="flex items-start gap-6 p-6 rounded-2xl bg-axen-darkgray/30 border border-white/5">
+                <div className="p-3 bg-axen-turquoise/10 rounded-full text-axen-turquoise">
                     <MapPin size={24} />
                 </div>
                 <div>
-                    <h3 className="text-axing-ivory font-bold mb-1">Nosso QG</h3>
-                    <p className="text-axing-gray">Av. Paulista, 0000 - Bela Vista<br/>São Paulo - SP, Brasil</p>
+                    <h3 className="text-axen-ivory font-bold mb-1">Nosso QG</h3>
+                    <p className="text-axen-gray">Av. Paulista, 0000 - Bela Vista<br/>São Paulo - SP, Brasil</p>
                 </div>
             </div>
 
-            <div className="flex items-start gap-6 p-6 rounded-2xl bg-axing-darkgray/30 border border-white/5">
-                <div className="p-3 bg-axing-turquoise/10 rounded-full text-axing-turquoise">
+            <div className="flex items-start gap-6 p-6 rounded-2xl bg-axen-darkgray/30 border border-white/5">
+                <div className="p-3 bg-axen-turquoise/10 rounded-full text-axen-turquoise">
                     <Mail size={24} />
                 </div>
                 <div>
-                    <h3 className="text-axing-ivory font-bold mb-1">E-mail</h3>
-                    <p className="text-axing-gray">hello@axing.com.br<br/>parcerias@axing.com.br</p>
+                    <h3 className="text-axen-ivory font-bold mb-1">E-mail</h3>
+                    <p className="text-axen-gray">hello@axen.com.br<br/>parcerias@axen.com.br</p>
                 </div>
             </div>
 
-            <div className="flex items-start gap-6 p-6 rounded-2xl bg-axing-darkgray/30 border border-white/5">
-                <div className="p-3 bg-axing-turquoise/10 rounded-full text-axing-turquoise">
+            <div className="flex items-start gap-6 p-6 rounded-2xl bg-axen-darkgray/30 border border-white/5">
+                <div className="p-3 bg-axen-turquoise/10 rounded-full text-axen-turquoise">
                     <Phone size={24} />
                 </div>
                 <div>
-                    <h3 className="text-axing-ivory font-bold mb-1">Telefone</h3>
-                    <p className="text-axing-gray">+55 (11) 99999-9999<br/>Seg-Sex, 9h às 18h</p>
+                    <h3 className="text-axen-ivory font-bold mb-1">Telefone</h3>
+                    <p className="text-axen-gray">+55 (11) 99999-9999<br/>Seg-Sex, 9h às 18h</p>
                 </div>
             </div>
           </div>
         </div>
 
         {/* Form */}
-        <div className="bg-axing-darkgray rounded-[3rem] p-8 md:p-12 border border-white/5 relative overflow-hidden">
+        <div className="bg-axen-darkgray rounded-[3rem] p-8 md:p-12 border border-white/5 relative overflow-hidden">
             {formState === 'success' ? (
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -70,11 +70,11 @@ const Contact: React.FC = () => {
                     <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mb-6">
                         <CheckCircle size={40} />
                     </div>
-                    <h3 className="text-2xl font-display font-bold text-axing-ivory mb-2">Mensagem Enviada!</h3>
-                    <p className="text-axing-gray">Nossa equipe entrará em contato em breve.</p>
+                    <h3 className="text-2xl font-display font-bold text-axen-ivory mb-2">Mensagem Enviada!</h3>
+                    <p className="text-axen-gray">Nossa equipe entrará em contato em breve.</p>
                     <button 
                         onClick={() => setFormState('idle')} 
-                        className="mt-8 text-axing-turquoise underline"
+                        className="mt-8 text-axen-turquoise underline"
                     >
                         Enviar outra mensagem
                     </button>
@@ -83,23 +83,23 @@ const Contact: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                            <label className="text-sm text-axing-ivory font-medium ml-2">Nome</label>
-                            <input required type="text" className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-axing-ivory focus:border-axing-turquoise focus:ring-1 focus:ring-axing-turquoise outline-none transition-all" placeholder="Seu nome" />
+                            <label className="text-sm text-axen-ivory font-medium ml-2">Nome</label>
+                            <input required type="text" className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-axen-ivory focus:border-axen-turquoise focus:ring-1 focus:ring-axen-turquoise outline-none transition-all" placeholder="Seu nome" />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm text-axing-ivory font-medium ml-2">Empresa</label>
-                            <input type="text" className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-axing-ivory focus:border-axing-turquoise focus:ring-1 focus:ring-axing-turquoise outline-none transition-all" placeholder="Sua empresa" />
+                            <label className="text-sm text-axen-ivory font-medium ml-2">Empresa</label>
+                            <input type="text" className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-axen-ivory focus:border-axen-turquoise focus:ring-1 focus:ring-axen-turquoise outline-none transition-all" placeholder="Sua empresa" />
                         </div>
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm text-axing-ivory font-medium ml-2">E-mail Corporativo</label>
-                        <input required type="email" className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-axing-ivory focus:border-axing-turquoise focus:ring-1 focus:ring-axing-turquoise outline-none transition-all" placeholder="voce@empresa.com" />
+                        <label className="text-sm text-axen-ivory font-medium ml-2">E-mail Corporativo</label>
+                        <input required type="email" className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-axen-ivory focus:border-axen-turquoise focus:ring-1 focus:ring-axen-turquoise outline-none transition-all" placeholder="voce@empresa.com" />
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm text-axing-ivory font-medium ml-2">Interesse</label>
-                        <select className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-axing-ivory focus:border-axing-turquoise focus:ring-1 focus:ring-axing-turquoise outline-none transition-all appearance-none cursor-pointer">
+                        <label className="text-sm text-axen-ivory font-medium ml-2">Interesse</label>
+                        <select className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-axen-ivory focus:border-axen-turquoise focus:ring-1 focus:ring-axen-turquoise outline-none transition-all appearance-none cursor-pointer">
                             <option>Consultoria Estratégica</option>
                             <option>Desenvolvimento IA</option>
                             <option>Branding & Design</option>
@@ -109,8 +109,8 @@ const Contact: React.FC = () => {
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm text-axing-ivory font-medium ml-2">Mensagem</label>
-                        <textarea required rows={4} className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-axing-ivory focus:border-axing-turquoise focus:ring-1 focus:ring-axing-turquoise outline-none transition-all resize-none" placeholder="Conte um pouco sobre seu projeto..."></textarea>
+                        <label className="text-sm text-axen-ivory font-medium ml-2">Mensagem</label>
+                        <textarea required rows={4} className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-4 text-axen-ivory focus:border-axen-turquoise focus:ring-1 focus:ring-axen-turquoise outline-none transition-all resize-none" placeholder="Conte um pouco sobre seu projeto..."></textarea>
                     </div>
 
                     <CapsuleButton fullWidth type="submit" disabled={formState === 'submitting'}>

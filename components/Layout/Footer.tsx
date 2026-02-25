@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
             <div className="md:col-span-1">
               <div className="mb-6">
                 <img 
-                  src="https://i.im.ge/2026/02/12/ePbLDz.LOGOS-AXEN-V1-1.png" 
+                  src="https://iili.io/qKPSerx.png" 
                   alt="Axen Logo" 
                   className="h-32 md:h-44 w-auto object-contain"
                 />
@@ -53,15 +53,15 @@ const Footer: React.FC = () => {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-axen-gray text-sm">
                   <MapPin size={18} className="text-axen-turquoise shrink-0 mt-1" />
-                  <span>Av. Paulista, 0000 - São Paulo, SP<br />Brasil</span>
+                  <span>Goiânia, Goiás<br />Brasil</span>
                 </li>
                 <li className="flex items-center gap-3 text-axen-gray text-sm">
                   <Mail size={18} className="text-axen-turquoise shrink-0" />
-                  <span>hello@axen.com.br</span>
+                  <span>contato@axendigital.com.br</span>
                 </li>
                 <li className="flex items-center gap-3 text-axen-gray text-sm">
                   <Phone size={18} className="text-axen-turquoise shrink-0" />
-                  <span>+55 11 99999-9999</span>
+                  <span>+55 62 98190-7473</span>
                 </li>
               </ul>
             </div>

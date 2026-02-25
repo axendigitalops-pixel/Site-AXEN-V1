@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group shrink-0 pl-1 md:pl-2 md:mr-8 relative z-50">
             <img 
-              src="https://i.im.ge/2026/02/12/ePclFX.LOGOS-AXEN-V1-2.png" 
+              src="https://iili.io/qKPvT4R.png" 
               alt="Axen Logo" 
               className="h-10 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />

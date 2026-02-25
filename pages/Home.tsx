@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Brain, Palette, BarChart3, Users, Zap, Fingerprint, Sparkles, Scan, Cpu, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CapsuleButton from '../components/UI/CapsuleButton';
@@ -19,25 +19,14 @@ const RevealSection: React.FC<{ children?: React.ReactNode; className?: string; 
 
 const Home: React.FC = () => {
   const { scrollY } = useScroll();
-  const [currentImage, setCurrentImage] = useState(0);
   
   // Hero Parallax Effects for Text
   const yHero = useTransform(scrollY, [0, 800], [0, 200]);
   const opacityHero = useTransform(scrollY, [0, 500], [1, 0]);
   
-  // Background Images for Slideshow
-  const heroImages = [
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop", // Tech Network/Globe
-    "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=2574&auto=format&fit=crop", // Human/Creative/Future
-    "https://images.unsplash.com/photo-1519608487953-e999c86e7455?q=80&w=2670&auto=format&fit=crop"  // Dark Neon/Data
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+  // Single Background Image
+  // TODO: Replace this URL with the specific image you want to use
+  const heroImage = "https://iili.io/qFFqm4n.png";
 
   const ecosystemItems = [
     { title: "Inteligência Artificial", desc: "Automação e escala", icon: Brain },
@@ -51,20 +40,16 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center overflow-hidden">
         
-        {/* Background Slideshow */}
+        {/* Static Background Image */}
         <div className="absolute inset-0 z-0">
-          <AnimatePresence mode="popLayout">
-            <motion.img
-              key={currentImage}
-              src={heroImages[currentImage]}
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.5 }}
-              className="absolute inset-0 w-full h-full object-cover"
-              alt="Axen Background"
-            />
-          </AnimatePresence>
+          <motion.img
+            src={heroImage}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0 w-full h-full object-cover"
+            alt="Axen Background"
+          />
           
           {/* Overlays for Readability */}
           <div className="absolute inset-0 bg-black/40" /> {/* General dim */}
@@ -85,45 +70,35 @@ const Home: React.FC = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                  <span className="w-12 h-[1px] bg-axen-turquoise"></span>
-                 <span className="text-axen-turquoise font-bold tracking-[0.2em] text-xs uppercase">Ecossistema Digital Vivo</span>
+                 <span className="text-axen-turquoise font-bold tracking-[0.2em] text-xs uppercase font-sans">Ecossistema Digital Vivo</span>
               </div>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-axen-ivory leading-[0.95] mb-8">
-                O NÚCLEO DO SEU <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-sans font-light tracking-tight text-axen-ivory leading-[1.1] mb-8 drop-shadow-2xl">
+                O NÚCLEO <br/>
+                <span className="font-normal">DO SEU</span> <br/>
+                <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 drop-shadow-sm">
                   CRESCIMENTO.
                 </span>
               </h1>
               
-              <p className="text-lg md:text-2xl text-axen-gray max-w-2xl mb-12 font-light leading-relaxed">
+              <p className="text-lg md:text-2xl text-axen-gray max-w-2xl mb-12 font-light leading-relaxed font-sans">
                 Conectamos inteligência artificial, criatividade e pessoas em um único sistema para impulsionar a evolução da sua empresa.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-start">
                 <Link to="/contact">
-                  <CapsuleButton variant="primary" className="!bg-axen-turquoise !text-black hover:!bg-white">
+                  <CapsuleButton variant="primary" className="!bg-axen-turquoise !text-black hover:!bg-white font-sans font-semibold">
                     Ative o Núcleo <ArrowRight size={18} />
                   </CapsuleButton>
                 </Link>
                 <Link to="/ecosystem">
-                  <CapsuleButton variant="outline" className="backdrop-blur-sm">
+                  <CapsuleButton variant="outline" className="backdrop-blur-sm font-sans">
                     Explorar Ecossistema
                   </CapsuleButton>
                 </Link>
               </div>
             </motion.div>
           </motion.div>
-          
-          {/* Image Indicators */}
-          <div className="absolute bottom-12 left-6 md:left-12 flex gap-3 z-20">
-            {heroImages.map((_, idx) => (
-              <button 
-                key={idx}
-                onClick={() => setCurrentImage(idx)}
-                className={`h-1 rounded-full transition-all duration-500 ${currentImage === idx ? 'w-8 bg-axen-turquoise' : 'w-2 bg-white/20'}`}
-              />
-            ))}
-          </div>
         </div>
 
         {/* Scroll Indicator - Right Side now */}
@@ -140,36 +115,19 @@ const Home: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* Infinite Carousel Marquee - Minimalist Version */}
-      <div className="py-20 bg-gradient-to-b from-black via-[#0A0A0A] to-[#050505] relative z-20">
-        <div className="overflow-hidden whitespace-nowrap mask-linear-fade">
-          <motion.div 
-            className="inline-flex gap-24 pl-8"
-            animate={{ x: [0, -1000] }}
-            transition={{ ease: "linear", duration: 40, repeat: Infinity }}
-          >
-            {[...ecosystemItems, ...ecosystemItems, ...ecosystemItems, ...ecosystemItems].map((item, index) => (
-              <div key={index} className="group inline-flex items-center gap-6 opacity-50 hover:opacity-100 transition-all duration-500 cursor-default">
-                {/* Icon with glow effect on hover */}
-                <item.icon 
-                  className="text-axen-ivory group-hover:text-axen-turquoise group-hover:drop-shadow-[0_0_10px_rgba(62,230,219,0.5)] transition-all duration-500" 
-                  size={32} 
-                  strokeWidth={1.5}
-                />
-                
-                <div className="flex flex-col">
-                  <h3 className="text-axen-ivory font-display font-bold text-2xl tracking-tight">{item.title}</h3>
-                  <p className="text-axen-gray text-xs uppercase tracking-[0.15em] font-medium mt-1">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-
       {/* Our Ecosystem Section */}
-      <section className="py-24 relative bg-[#050505]">
-        <div className="container mx-auto px-6">
+      <section className="py-24 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://iili.io/qKiTMIs.png" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-axen-black via-axen-black/80 to-axen-black" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <RevealSection className="mb-20 md:w-2/3">
             <h2 className="text-5xl md:text-6xl font-display font-bold text-axen-ivory mb-6 tracking-tight">
               Mais que serviços, <br/> 
@@ -238,7 +196,7 @@ const Home: React.FC = () => {
                   Por que a Axen?
                 </h2>
                 <p className="text-axen-gray max-w-xl text-lg">
-                  Não somos apenas uma agência. Somos a infraestrutura de inteligência que o seu negócio precisa para o futuro.
+                  Não somos só uma agência. Somos o núcleo que conecta estratégia, criação e automação para transformar presença digital em crescimento com consistência.
                 </p>
              </div>
              <div className="hidden md:block">
@@ -265,11 +223,11 @@ const Home: React.FC = () => {
                     <div className="p-2 rounded-full bg-axen-turquoise/90 text-black">
                        <Brain size={20} />
                     </div>
-                    <span className="text-axen-turquoise font-bold uppercase tracking-widest text-xs">Diferencial Exclusivo</span>
+                    <span className="text-axen-turquoise font-bold uppercase tracking-widest text-xs">DIFERENCIAL EXCLUSIVO</span>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">IA Humanizada</h3>
+                  <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">IA com Direção Humana</h3>
                   <p className="text-axen-ivory/80 max-w-md leading-relaxed">
-                    A tecnologia não deve substituir a sensibilidade. Nossa IA processa dados em escala, mas a estratégia final carrega a empatia e a nuance que só humanos possuem.
+                    Usamos IA para acelerar e escalar processos, mas quem define prioridade, tom e decisão é gente. Eficiência sem perder identidade, contexto e intenção.
                   </p>
                 </div>
               </div>
@@ -286,7 +244,7 @@ const Home: React.FC = () => {
                    </div>
                    <h3 className="text-2xl font-display font-bold text-axen-ivory mb-2">Núcleo Integrador</h3>
                    <p className="text-axen-gray text-sm">
-                     Estratégia, execução e análise não acontecem em silos. Aqui, tudo flui em um único sistema vivo.
+                     Estratégia, execução e análise no mesmo fluxo. Tudo conectado do diagnóstico ao deploy — menos retrabalho, mais previsibilidade e evolução contínua.
                    </p>
                 </div>
               </div>
@@ -308,7 +266,7 @@ const Home: React.FC = () => {
                       <h3 className="text-2xl font-display font-bold text-white mb-2 flex items-center gap-2">
                         Coragem Criativa <Sparkles size={18} className="text-axen-turquoise" />
                       </h3>
-                      <p className="text-axen-ivory/70 text-sm">Fugimos do óbvio para criar narrativas autênticas.</p>
+                      <p className="text-axen-ivory/70 text-sm">Criamos com critério: design limpo, narrativa forte e testes rápidos. Saímos do óbvio sem perder clareza — com foco real em conversão.</p>
                     </div>
                   </div>
                 </div>

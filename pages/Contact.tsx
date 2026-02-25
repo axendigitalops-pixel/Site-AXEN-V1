@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                     <h3 className="text-axen-ivory font-bold mb-1">Nosso QG</h3>
-                    <p className="text-axen-gray">Av. Paulista, 0000 - Bela Vista<br/>São Paulo - SP, Brasil</p>
+                    <p className="text-axen-gray">Goiânia - GO<br/>Brasil</p>
                 </div>
             </div>
 
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                     <h3 className="text-axen-ivory font-bold mb-1">E-mail</h3>
-                    <p className="text-axen-gray">hello@axen.com.br<br/>parcerias@axen.com.br</p>
+                    <p className="text-axen-gray">contato@axendigital.com.br</p>
                 </div>
             </div>
 
@@ -52,8 +52,8 @@ const Contact: React.FC = () => {
                     <Phone size={24} />
                 </div>
                 <div>
-                    <h3 className="text-axen-ivory font-bold mb-1">Telefone</h3>
-                    <p className="text-axen-gray">+55 (11) 99999-9999<br/>Seg-Sex, 9h às 18h</p>
+                    <h3 className="text-axen-ivory font-bold mb-1">WhatsApp / Telefone</h3>
+                    <p className="text-axen-gray">+55 (62) 98190-7473<br/>Seg-Sex, 9h às 18h</p>
                 </div>
             </div>
           </div>

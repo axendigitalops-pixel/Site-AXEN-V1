@@ -86,11 +86,11 @@ const Home: React.FC = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-start">
-                <Link to="/contact">
+                <a href="https://wa.me/message/VMLQEJBHKTC3B1" target="_blank" rel="noopener noreferrer">
                   <CapsuleButton variant="primary" className="!bg-axen-turquoise !text-black hover:!bg-white font-sans font-semibold">
                     Ative o Núcleo <ArrowRight size={18} />
                   </CapsuleButton>
-                </Link>
+                </a>
                 <Link to="/ecosystem">
                   <CapsuleButton variant="outline" className="backdrop-blur-sm font-sans">
                     Explorar Ecossistema

@@ -187,117 +187,112 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Why Choose Axen - Redesigned Asymmetrical Grid */}
-      <section className="py-24 bg-axen-black relative">
-        <div className="container mx-auto px-6">
-          <RevealSection className="mb-16 md:flex justify-between items-end">
-             <div>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-axen-ivory mb-4">
+      {/* Why Choose Axen - Infinite Carousel */}
+      <section className="py-32 bg-axen-black relative overflow-hidden">
+        <div className="container mx-auto px-6 mb-20">
+          <RevealSection className="md:flex justify-between items-end">
+             <div className="max-w-2xl">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="w-8 h-[1px] bg-axen-turquoise"></span>
+                  <span className="text-axen-turquoise font-bold tracking-[0.2em] text-[10px] uppercase">Diferenciais</span>
+                </div>
+                <h2 className="text-5xl md:text-6xl font-display font-bold text-axen-ivory mb-6 tracking-tight">
                   Por que a Axen?
                 </h2>
-                <p className="text-axen-gray max-w-xl text-lg">
+                <p className="text-axen-gray text-xl leading-relaxed">
                   Não somos só uma agência. Somos o núcleo que conecta estratégia, criação e automação para transformar presença digital em crescimento com consistência.
                 </p>
              </div>
              <div className="hidden md:block">
                 <Link to="/about">
-                   <CapsuleButton variant="ghost">Sobre Nós</CapsuleButton>
+                   <CapsuleButton variant="ghost" className="border-white/10 hover:border-white/30">Sobre Nós</CapsuleButton>
                 </Link>
              </div>
           </RevealSection>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 min-h-[600px]">
-            
-            {/* Card 1: IA Humanizada (Large with Image) */}
-            <RevealSection className="md:col-span-7 row-span-2 group h-full">
-              <div className="relative h-full min-h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10">
-                <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/20 transition-colors duration-700"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop" 
-                  alt="IA Humanizada" 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute bottom-0 left-0 p-10 z-20">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 rounded-full bg-axen-turquoise/90 text-black">
-                       <Brain size={20} />
+        {/* Infinite Carousel Container */}
+        <div className="relative flex overflow-hidden py-10">
+          {/* Gradient Masks for smooth edges */}
+          <div className="absolute left-0 top-0 w-40 h-full bg-gradient-to-r from-axen-black to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 w-40 h-full bg-gradient-to-l from-axen-black to-transparent z-20 pointer-events-none" />
+
+          <motion.div 
+            className="flex gap-8 whitespace-nowrap px-4"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ 
+              duration: 50, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+          >
+            {/* Double the items for seamless loop */}
+            {[...Array(2)].map((_, i) => (
+              <React.Fragment key={i}>
+                {[
+                  {
+                    title: "IA Humanizada",
+                    desc: "IA acelera, humanos decidem.",
+                    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop",
+                    icon: Brain
+                  },
+                  {
+                    title: "Núcleo Integrador",
+                    desc: "Estratégia e execução conectadas.",
+                    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2670&auto=format&fit=crop",
+                    icon: Zap
+                  },
+                  {
+                    title: "Coragem Criativa",
+                    desc: "Design limpo e narrativa forte.",
+                    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+                    icon: Sparkles
+                  },
+                  {
+                    title: "Dados & Ética",
+                    desc: "Métricas reais e transparência.",
+                    image: "https://images.unsplash.com/photo-1551288049-bbda38a5f9a2?q=80&w=2670&auto=format&fit=crop",
+                    icon: Fingerprint
+                  },
+                  {
+                    title: "Evolução Real",
+                    desc: "Crescimento constante e ROI.",
+                    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+                    icon: TrendingUp
+                  }
+                ].map((item, idx) => (
+                  <div 
+                    key={`${i}-${idx}`} 
+                    className="relative w-[320px] md:w-[500px] h-[450px] md:h-[600px] rounded-[3rem] overflow-hidden group shrink-0 border border-white/5 bg-[#0A0A0A]"
+                  >
+                    {/* Image Background */}
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                    />
+                    
+                    {/* Overlays */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700"></div>
+                    
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 p-10 md:p-12 w-full z-10">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-axen-turquoise group-hover:bg-axen-turquoise group-hover:text-black transition-all duration-500">
+                           <item.icon size={22} />
+                        </div>
+                        <span className="text-white/40 font-bold uppercase tracking-[0.2em] text-[9px] group-hover:text-axen-turquoise transition-colors">Axen Core</span>
+                      </div>
+                      <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-3 tracking-tight">{item.title}</h3>
+                      <p className="text-axen-gray text-base md:text-lg font-light whitespace-normal leading-relaxed max-w-[280px] md:max-w-[320px] group-hover:text-white/80 transition-colors">
+                        {item.desc}
+                      </p>
                     </div>
-                    <span className="text-axen-turquoise font-bold uppercase tracking-widest text-xs">DIFERENCIAL EXCLUSIVO</span>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">IA com Direção Humana</h3>
-                  <p className="text-axen-ivory/80 max-w-md leading-relaxed">
-                    Usamos IA para acelerar e escalar processos, mas quem define prioridade, tom e decisão é gente. Eficiência sem perder identidade, contexto e intenção.
-                  </p>
-                </div>
-              </div>
-            </RevealSection>
-
-            {/* Card 2: Núcleo Integrador (Medium, Dark Tech) */}
-            <RevealSection className="md:col-span-5 md:row-span-1 group h-full" delay={0.1}>
-              <div className="relative h-full min-h-[280px] rounded-[2.5rem] bg-[#0A0A0A] border border-white/10 p-8 flex flex-col justify-between overflow-hidden hover:border-axen-turquoise/30 transition-colors">
-                <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/5 to-transparent opacity-50"></div>
-                
-                <div className="relative z-10">
-                   <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-4 text-axen-ivory group-hover:bg-axen-turquoise group-hover:text-black transition-all">
-                      <Zap size={24} />
-                   </div>
-                   <h3 className="text-2xl font-display font-bold text-axen-ivory mb-2">Núcleo Integrador</h3>
-                   <p className="text-axen-gray text-sm">
-                     Estratégia, execução e análise no mesmo fluxo. Tudo conectado do diagnóstico ao deploy — menos retrabalho, mais previsibilidade e evolução contínua.
-                   </p>
-                </div>
-              </div>
-            </RevealSection>
-
-            {/* Card 3: Coragem Criativa (Medium, Artistic Image) */}
-            <RevealSection className="md:col-span-5 md:row-span-1 group h-full" delay={0.2}>
-              <div className="relative h-full min-h-[280px] rounded-[2.5rem] overflow-hidden border border-white/10">
-                <div className="absolute inset-0 bg-black/30 z-10"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" 
-                  alt="Criatividade" 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute bottom-0 left-0 p-8 z-20 w-full">
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <h3 className="text-2xl font-display font-bold text-white mb-2 flex items-center gap-2">
-                        Coragem Criativa <Sparkles size={18} className="text-axen-turquoise" />
-                      </h3>
-                      <p className="text-axen-ivory/70 text-sm">Criamos com critério: design limpo, narrativa forte e testes rápidos. Saímos do óbvio sem perder clareza — com foco real em conversão.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </RevealSection>
-            
-             {/* Card 4: Dados First Party (Full width on mobile, span on large) */}
-             <RevealSection className="md:col-span-12 mt-6 group" delay={0.3}>
-                <div className="relative rounded-[2.5rem] bg-gradient-to-r from-[#0A0A0A] to-[#111] border border-white/10 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 hover:border-axen-turquoise/20 transition-colors">
-                   <div className="flex items-start gap-6">
-                      <div className="p-4 rounded-full bg-white/5 text-axen-turquoise group-hover:scale-110 transition-transform">
-                         <Fingerprint size={32} />
-                      </div>
-                      <div>
-                         <h3 className="text-2xl font-display font-bold text-axen-ivory mb-2">Dados First-Party & Ética</h3>
-                         <p className="text-axen-gray max-w-2xl">
-                           Em um mundo sem cookies, construímos sua base proprietária com foco total em consentimento, transparência e métricas que realmente impactam o negócio.
-                         </p>
-                      </div>
-                   </div>
-                   <div className="shrink-0">
-                      <div className="flex gap-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                         <div className="h-2 w-12 bg-axen-turquoise rounded-full"></div>
-                         <div className="h-2 w-8 bg-white/20 rounded-full"></div>
-                         <div className="h-2 w-4 bg-white/20 rounded-full"></div>
-                      </div>
-                   </div>
-                </div>
-             </RevealSection>
-
-          </div>
+                ))}
+              </React.Fragment>
+            ))}
+          </motion.div>
         </div>
       </section>
 

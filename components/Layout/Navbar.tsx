@@ -50,8 +50,8 @@ const Navbar: React.FC = () => {
           animate={{
             width: scrolled ? "90%" : "95%", // Slightly wider on initial state for mobile
             maxWidth: scrolled ? "900px" : "1400px",
-            marginTop: scrolled ? "1rem" : "1.5rem", // Reduced top margin for mobile friendliness
-            padding: scrolled ? "0.75rem 1rem" : "1rem 1.5rem", // Responsive padding values
+            marginTop: scrolled ? "0.75rem" : "1.25rem", // Reduced top margin for mobile friendliness
+            padding: scrolled ? "0.5rem 1rem" : "0.75rem 1.5rem", // Responsive padding values
             backgroundColor: scrolled ? "rgba(5, 5, 5, 0.85)" : "rgba(5, 5, 5, 0)",
             backdropFilter: scrolled ? "blur(16px)" : "blur(0px)",
             borderRadius: "9999px",
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
             <img 
               src="https://iili.io/qKPvT4R.png" 
               alt="Axen Logo" 
-              className="h-10 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-8 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 

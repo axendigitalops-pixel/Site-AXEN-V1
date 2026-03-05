@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Heart, Zap, ShieldCheck, TrendingUp, ChevronRight, 
-  Brain, Palette, BarChart3, Settings, Check, X, ArrowRight, Plus, Minus 
+  Brain, Palette, BarChart3, Settings, Check, X, ArrowRight, Plus, Minus
 } from 'lucide-react';
 import CapsuleButton from '../components/UI/CapsuleButton';
 import { Link } from 'react-router-dom';
@@ -68,6 +68,8 @@ const GlassCard: React.FC<{ children: React.ReactNode; className?: string; hover
 );
 
 const About: React.FC = () => {
+  const [activeMethodology, setActiveMethodology] = useState(0);
+
   const pillars = [
     { 
       title: "Inteligência Artificial", 
@@ -92,19 +94,39 @@ const About: React.FC = () => {
   ];
 
   const methodology = [
-    { title: "Diagnóstico", desc: "Mapeamos gargalos e oportunidades: mensagem, canal, funil, timing e atrito." },
-    { title: "Direção Estratégica", desc: "Clareza de posicionamento, oferta e caminho: quem decide, o que precisa entender e qual é o próximo passo." },
-    { title: "Construção do Sistema", desc: "Páginas, automações, criativos, cadências e integrações — tudo preparado para operar no mundo real." },
-    { title: "Distribuição Intencional", desc: "Mensagem na frente de quem decide: canal certo, frequência certa, contexto certo." },
-    { title: "Otimização Contínua", desc: "Ajustes baseados em sinais: conversas, propostas, fechamento e retenção. Sem achismo." }
+    { 
+      title: "Diagnóstico", 
+      desc: "Mapeamos gargalos e oportunidades: mensagem, canal, funil, timing e atrito.",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800"
+    },
+    { 
+      title: "Direção Estratégica", 
+      desc: "Clareza de posicionamento, oferta e caminho: quem decide, o que precisa entender e qual é o próximo passo.",
+      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800"
+    },
+    { 
+      title: "Construção do Sistema", 
+      desc: "Páginas, automações, criativos, cadências e integrações — tudo preparado para operar no mundo real.",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
+    },
+    { 
+      title: "Distribuição Intencional", 
+      desc: "Mensagem na frente de quem decide: canal certo, frequência certa, contexto certo.",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+    },
+    { 
+      title: "Otimização Contínua", 
+      desc: "Ajustes baseados em sinais: conversas, propostas, fechamento e retenção. Sem achismo.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+    }
   ];
 
   const principles = [
-    { title: "Humanidade no Centro", desc: "Tecnologia serve pessoas. E crescimento serve propósito." },
-    { title: "Tecnologia como Extensão", desc: "IA não substitui. Amplifica." },
-    { title: "Transparência Radical", desc: "O que não pode ser visto, não pode ser melhorado." },
-    { title: "Evolução Contínua", desc: "Operação boa melhora todo dia, não só quando dá problema." },
-    { title: "Obsessão por Métricas", desc: "Se não mede, é opinião." }
+    { title: "Humanidade no Centro", icon: Heart, desc: "Tecnologia serve pessoas. E crescimento serve propósito." },
+    { title: "Tecnologia como Extensão", icon: Zap, desc: "IA não substitui. Amplifica." },
+    { title: "Transparência Radical", icon: ShieldCheck, desc: "O que não pode ser visto, não pode ser melhorado." },
+    { title: "Evolução Contínua", icon: TrendingUp, desc: "Operação boa melhora todo dia, não só quando dá problema." },
+    { title: "Obsessão por Métricas", icon: BarChart3, desc: "Se não mede, é opinião." }
   ];
 
   const faqs = [
@@ -168,32 +190,41 @@ const About: React.FC = () => {
       </section>
 
       {/* 2) MANIFESTO */}
-      <section className="py-24 bg-[#080808]/50 backdrop-blur-sm border-y border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
-        <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
+      <section className="py-24 container mx-auto px-6 relative z-10">
+        <div className="max-w-3xl mx-auto">
             <RevealSection>
-                <div className="space-y-12 text-2xl md:text-3xl lg:text-4xl font-display font-medium text-axen-ivory leading-tight">
-                    <div className="group hover:text-white transition-colors duration-500">
-                        <p>A maioria faz marketing por tarefa.</p>
-                        <p className="text-axen-gray group-hover:text-axen-turquoise/80 transition-colors duration-500">A gente estrutura como operação.</p>
-                    </div>
-                    
-                    <div className="group hover:text-white transition-colors duration-500">
-                        <p>Porque visibilidade sem caminho vira barulho.</p>
-                        <p className="text-axen-gray group-hover:text-axen-turquoise/80 transition-colors duration-500">E “postar mais” não resolve um funil quebrado.</p>
-                    </div>
-                    
-                    <div className="group hover:text-white transition-colors duration-500">
-                        <p>A Axen existe pra reduzir ruído, encurtar decisão e construir tração contínua.</p>
-                        <p className="text-axen-gray group-hover:text-axen-turquoise/80 transition-colors duration-500">Com método, distribuição e melhoria constante.</p>
-                    </div>
-                    
-                    <div className="pt-8">
-                        <span className="inline-block relative text-axen-turquoise text-lg uppercase tracking-widest font-bold pb-2">
-                            Resultado não é evento. Resultado é rotina.
-                            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-axen-turquoise shadow-[0_0_10px_rgba(45,212,191,0.8)]"></span>
-                        </span>
-                    </div>
+                <div className="space-y-0 divide-y divide-white/10 border-y border-white/10">
+                    {[
+                        {
+                            label: "01",
+                            old: "A maioria faz marketing por tarefa.",
+                            new: <>A gente estrutura como <span className="text-axen-turquoise">operação.</span></>
+                        },
+                        {
+                            label: "02",
+                            old: "Visibilidade sem caminho vira barulho.",
+                            new: <>Reduzir ruído e construir <span className="text-axen-turquoise">tração.</span></>
+                        },
+                        {
+                            label: "03",
+                            old: "Resultado não é evento.",
+                            new: <>Resultado é <span className="text-axen-turquoise">rotina.</span></>
+                        }
+                    ].map((item, idx) => (
+                        <div key={idx} className="py-10 group md:flex gap-8 items-baseline hover:bg-white/[0.02] transition-colors duration-500 px-6 -mx-6 rounded-lg">
+                            <span className="text-axen-gray/30 font-mono text-sm font-bold mb-3 md:mb-0 block w-12 shrink-0 group-hover:text-axen-turquoise transition-colors">
+                                {item.label}
+                            </span>
+                            <div className="flex-1 grid md:grid-cols-2 gap-4 md:gap-8 items-baseline">
+                                <p className="text-lg text-white/40 font-medium group-hover:text-white/60 transition-colors duration-300">
+                                    {item.old}
+                                </p>
+                                <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
+                                    {item.new}
+                                </h3>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </RevealSection>
         </div>
@@ -201,61 +232,61 @@ const About: React.FC = () => {
 
       {/* 3) O QUE SOMOS / O QUE NÃO SOMOS */}
       <section className="py-24 container mx-auto px-6 z-10 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
-            <RevealSection>
-                <h3 className="text-3xl font-display font-bold text-axen-ivory mb-8 flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-axen-turquoise/10 border border-axen-turquoise/20">
-                        <Check className="text-axen-turquoise" size={24} /> 
-                    </div>
-                    Somos
-                </h3>
-                <ul className="space-y-4">
-                    <GlassCard className="p-6 !border-l-4 !border-l-axen-turquoise !rounded-l-lg">
-                        <li className="flex gap-4 items-start">
-                            <p className="text-lg text-axen-gray">Uma infraestrutura de crescimento que une estratégia, execução e análise.</p>
-                        </li>
-                    </GlassCard>
-                    <GlassCard className="p-6 !border-l-4 !border-l-axen-turquoise !rounded-l-lg" hoverEffect={true}>
-                        <li className="flex gap-4 items-start">
-                            <p className="text-lg text-axen-gray">Um sistema de operação digital que organiza presença, demanda e conversão.</p>
-                        </li>
-                    </GlassCard>
-                    <GlassCard className="p-6 !border-l-4 !border-l-axen-turquoise !rounded-l-lg" hoverEffect={true}>
-                        <li className="flex gap-4 items-start">
-                            <p className="text-lg text-axen-gray">Um time que trabalha com cadência: medir, ajustar, repetir.</p>
-                        </li>
-                    </GlassCard>
-                </ul>
-            </RevealSection>
+        <RevealSection className="mb-16 text-center">
+            <h2 className="text-4xl font-display font-bold text-axen-ivory mb-4">Identidade & Posicionamento</h2>
+            <p className="text-axen-gray text-lg">O que nos separa do mercado tradicional.</p>
+        </RevealSection>
 
-            <RevealSection delay={0.2}>
-                <h3 className="text-3xl font-display font-bold text-white/50 mb-8 flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-red-500/10 border border-red-500/20">
-                        <X className="text-red-500/50" size={24} /> 
+        <div className="space-y-6">
+            {[
+                {
+                    negative: "Uma agência de post e “conteúdo por calendário”.",
+                    positive: "Uma infraestrutura de crescimento que une estratégia, execução e análise."
+                },
+                {
+                    negative: "Um fornecedor de tráfego sem contexto e sem funil.",
+                    positive: "Um sistema de operação digital que organiza presença, demanda e conversão."
+                },
+                {
+                    negative: "Um projeto bonito que não vira demanda.",
+                    positive: "Um time que trabalha com cadência: medir, ajustar, repetir."
+                }
+            ].map((item, idx) => (
+                <RevealSection key={idx} delay={idx * 0.1}>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden border border-white/10 hover:border-axen-turquoise/30 transition-colors duration-500 group">
+                        {/* Left: The Anti-Pattern */}
+                        <div className="p-8 lg:p-12 bg-white/[0.02] flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 relative">
+                            <div className="flex items-center gap-3 mb-4 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="p-1.5 rounded-full bg-red-500/10 text-red-500">
+                                    <X size={14} />
+                                </div>
+                                <span className="text-xs font-bold uppercase tracking-widest text-red-500">Não Somos</span>
+                            </div>
+                            <p className="text-xl text-white/40 font-medium group-hover:text-white/60 transition-colors duration-300">
+                                {item.negative}
+                            </p>
+                        </div>
+
+                        {/* Right: The Axen Way */}
+                        <div className="p-8 lg:p-12 bg-axen-turquoise/[0.02] flex flex-col justify-center relative overflow-hidden">
+                            <div className="absolute inset-0 bg-axen-turquoise/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-axen-turquoise/20 rounded-full blur-[80px] group-hover:bg-axen-turquoise/30 transition-colors duration-500"></div>
+                            
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="p-1.5 rounded-full bg-axen-turquoise/20 text-axen-turquoise shadow-[0_0_10px_rgba(45,212,191,0.3)]">
+                                        <Check size={14} />
+                                    </div>
+                                    <span className="text-xs font-bold uppercase tracking-widest text-axen-turquoise">Somos</span>
+                                </div>
+                                <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
+                                    {item.positive}
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    Não somos
-                </h3>
-                <ul className="space-y-4">
-                    <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.01] opacity-60 hover:opacity-100 transition-opacity duration-300">
-                        <li className="flex gap-4 items-start">
-                            <div className="w-1.5 h-1.5 rounded-full bg-red-500/50 mt-2.5 shrink-0"></div>
-                            <p className="text-lg text-axen-gray">Uma agência de post e “conteúdo por calendário”.</p>
-                        </li>
-                    </div>
-                    <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.01] opacity-60 hover:opacity-100 transition-opacity duration-300">
-                        <li className="flex gap-4 items-start">
-                            <div className="w-1.5 h-1.5 rounded-full bg-red-500/50 mt-2.5 shrink-0"></div>
-                            <p className="text-lg text-axen-gray">Um fornecedor de tráfego sem contexto e sem funil.</p>
-                        </li>
-                    </div>
-                    <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.01] opacity-60 hover:opacity-100 transition-opacity duration-300">
-                        <li className="flex gap-4 items-start">
-                            <div className="w-1.5 h-1.5 rounded-full bg-red-500/50 mt-2.5 shrink-0"></div>
-                            <p className="text-lg text-axen-gray">Um projeto bonito que não vira demanda.</p>
-                        </li>
-                    </div>
-                </ul>
-            </RevealSection>
+                </RevealSection>
+            ))}
         </div>
       </section>
 
@@ -287,57 +318,105 @@ const About: React.FC = () => {
 
       {/* 5) NOSSA METODOLOGIA */}
       <section className="py-24 container mx-auto px-6 z-10 relative">
-        <div className="flex flex-col lg:flex-row gap-16">
-            <div className="lg:w-1/3 sticky top-32 h-fit">
-                <RevealSection>
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-axen-ivory mb-6">Protocolo de Evolução</h2>
-                    <p className="text-axen-gray text-lg mb-8 border-l-2 border-axen-turquoise pl-6 py-2 bg-gradient-to-r from-axen-turquoise/5 to-transparent">
-                        Um ciclo contínuo que transforma crescimento em previsibilidade.
-                    </p>
-                </RevealSection>
-            </div>
+        <RevealSection className="mb-16 text-center">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-axen-ivory mb-6">Protocolo de Evolução</h2>
+            <p className="text-axen-gray text-lg max-w-2xl mx-auto">
+                Um ciclo contínuo que transforma crescimento em previsibilidade.
+            </p>
+        </RevealSection>
 
-            <div className="lg:w-2/3 relative">
-                <div className="absolute left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-axen-turquoise via-white/10 to-transparent"></div>
-                <div className="space-y-8">
-                    {methodology.map((item, i) => (
-                        <RevealSection key={i} delay={i * 0.1}>
-                            <div className="relative pl-16 group">
-                                <div className="absolute left-[11px] top-2 w-2.5 h-2.5 rounded-full bg-black border-2 border-axen-turquoise group-hover:scale-150 group-hover:bg-axen-turquoise group-hover:shadow-[0_0_15px_rgba(45,212,191,0.8)] transition-all duration-300 z-10"></div>
-                                <GlassCard className="p-8 group-hover:border-axen-turquoise/30 transition-all duration-300">
-                                    <h3 className="text-2xl font-display font-bold text-axen-ivory mb-2 group-hover:text-axen-turquoise transition-colors">{item.title}</h3>
-                                    <p className="text-axen-gray text-lg group-hover:text-white/90 transition-colors">
-                                        {item.desc}
-                                    </p>
-                                </GlassCard>
-                            </div>
-                        </RevealSection>
-                    ))}
-                </div>
-            </div>
+        <div className="flex flex-col lg:flex-row gap-4 h-auto lg:h-[500px]">
+            {methodology.map((item, i) => (
+                <motion.div
+                    key={i}
+                    layout
+                    onMouseEnter={() => setActiveMethodology(i)}
+                    onClick={() => setActiveMethodology(i)}
+                    className={`relative rounded-3xl border border-white/10 overflow-hidden cursor-pointer group transition-all duration-500 ease-out
+                        ${activeMethodology === i ? 'lg:flex-[3] bg-white/[0.06]' : 'lg:flex-1 bg-black/40 hover:bg-white/[0.02]'}
+                        flex-shrink-0 flex flex-col
+                    `}
+                >
+                    {/* Background Image for Active */}
+                    <AnimatePresence mode="wait">
+                        {activeMethodology === i && (
+                            <motion.div 
+                                className="absolute inset-0 z-0"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <img 
+                                    src={item.image} 
+                                    alt={item.title} 
+                                    className="w-full h-full object-cover opacity-40 mix-blend-overlay" 
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    <div className="p-8 flex flex-col h-full relative z-10">
+                        {/* Content */}
+                        <div className={`mt-auto transition-all duration-500 ${activeMethodology === i ? 'translate-y-0' : ''}`}>
+                            <h3 className={`text-2xl font-display font-bold mb-4 transition-all duration-300 whitespace-nowrap 
+                                ${activeMethodology === i 
+                                    ? 'text-white translate-x-0' 
+                                    : 'text-white/60 lg:-rotate-90 lg:origin-bottom-left lg:translate-x-8 lg:translate-y-0 absolute bottom-8 left-0'
+                                }`}>
+                                {item.title}
+                            </h3>
+                            
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ 
+                                    opacity: activeMethodology === i ? 1 : 0,
+                                    height: activeMethodology === i ? 'auto' : 0
+                                }}
+                                className="overflow-hidden"
+                            >
+                                <p className="text-axen-gray text-lg leading-relaxed max-w-lg">
+                                    {item.desc}
+                                </p>
+                            </motion.div>
+                        </div>
+                    </div>
+                </motion.div>
+            ))}
         </div>
       </section>
 
       {/* 6) PRINCÍPIOS */}
-      <section className="py-24 bg-[#080808] relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+      <section className="py-32 relative overflow-hidden">
+        {/* Subtle background glow for the section */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-axen-turquoise/[0.02] blur-[120px] pointer-events-none"></div>
+        
         <div className="container mx-auto px-6 relative z-10">
-            <RevealSection className="mb-16 text-center">
-                <h2 className="text-4xl font-display font-bold text-axen-ivory mb-2">Princípios</h2>
-                <p className="text-axen-gray">O código fonte da nossa cultura.</p>
+            <RevealSection className="mb-20 text-center">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
+                    <span className="text-axen-turquoise text-xs font-bold uppercase tracking-widest">Cultura & Valores</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-axen-ivory mb-4 tracking-tight">Princípios</h2>
+                <p className="text-axen-gray text-lg max-w-xl mx-auto">O código fonte que governa cada decisão e entrega da Axen.</p>
             </RevealSection>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {principles.map((principle, idx) => (
                     <RevealSection key={idx} delay={idx * 0.1}>
-                        <GlassCard className="p-8 h-full hover:bg-white/[0.03]">
-                            <div className="mb-4 opacity-50 text-axen-turquoise">
-                                <Minus size={20} />
+                        <GlassCard className="p-10 h-full group flex flex-col items-start text-left">
+                            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-axen-turquoise mb-8 group-hover:scale-110 group-hover:bg-axen-turquoise group-hover:text-black transition-all duration-500 shadow-[0_0_20px_-5px_rgba(45,212,191,0.2)]">
+                                <principle.icon size={28} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-xl font-display font-bold text-axen-ivory mb-3">{principle.title}</h3>
-                            <p className="text-axen-gray text-sm leading-relaxed">
+                            <h3 className="text-2xl font-display font-bold text-axen-ivory mb-4 group-hover:text-white transition-colors duration-300">
+                                {principle.title}
+                            </h3>
+                            <p className="text-axen-gray text-lg leading-relaxed group-hover:text-white/80 transition-colors duration-300">
                                 {principle.desc}
                             </p>
+                            
+                            {/* Decorative element */}
+                            <div className="mt-8 w-8 h-1 bg-white/10 rounded-full group-hover:w-16 group-hover:bg-axen-turquoise transition-all duration-500"></div>
                         </GlassCard>
                     </RevealSection>
                 ))}
@@ -367,31 +446,6 @@ const About: React.FC = () => {
                     </GlassCard>
                 </RevealSection>
             ))}
-        </div>
-      </section>
-
-      {/* 8) PROVAS / SINAIS DE CONFIANÇA (Placeholders) */}
-      <section className="py-24 bg-white/[0.02] border-y border-white/5 relative">
-        <div className="container mx-auto px-6 relative z-10">
-            <RevealSection className="mb-16 text-center">
-                <h2 className="text-4xl font-display font-bold text-axen-ivory mb-4">Resultados Reais</h2>
-            </RevealSection>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                {[
-                    { title: "[Cases]", desc: "Veja o que muda quando a operação vira método." },
-                    { title: "[Números]", desc: "Tempo de resposta, taxa de conversão, custo por lead qualificado." },
-                    { title: "[Depoimentos]", desc: "O que os clientes dizem quando o crescimento deixa de ser tentativa." },
-                    { title: "[Parcerias]", desc: "Ferramentas e integrações que sustentam a operação." }
-                ].map((item, idx) => (
-                    <RevealSection key={idx} delay={idx * 0.1}>
-                        <GlassCard className="p-8 h-full flex flex-col justify-center items-center group cursor-default">
-                            <h4 className="text-axen-turquoise font-bold mb-3 text-xl group-hover:scale-105 transition-transform drop-shadow-sm">{item.title}</h4>
-                            <p className="text-axen-gray text-sm group-hover:text-white transition-colors">{item.desc}</p>
-                        </GlassCard>
-                    </RevealSection>
-                ))}
-            </div>
         </div>
       </section>
 
